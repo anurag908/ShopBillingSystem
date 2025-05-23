@@ -51,6 +51,27 @@ namespace ShopBillingSystem
             } while (choice != "5");
         }
 
+        public bool Login()
+        {
+            Console.Write("Username:");
+            string username = console.ReadLine();
+            Console.Write("Password:");
+            string password = console.ReadLine();
+
+            if(users.ContainsKey(username) && users[username] == password)
+            {
+                Console.WriteLine("\nLogin Successfull\n");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("\nLogin Failure\n");
+                return false;
+            }
+                
+            
+        }
+
         private void ViewInventory()
         {
             Console.WriteLine("\n--- Inventory ---");
